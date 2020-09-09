@@ -7,3 +7,5 @@ draft: false
 準備中です
 
 coming soon
+
+![logo](/img/favicon.png)
