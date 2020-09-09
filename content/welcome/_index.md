@@ -8,4 +8,4 @@ draft: false
 
 coming soon
 
-![logo](/img/favicon.png)
+![logo](../img/favicon.png)
