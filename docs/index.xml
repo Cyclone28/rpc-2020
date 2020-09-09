@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>六甲学院物理部2020</title>
+    <link>https://example.org/</link>
+    <description>Recent content on 六甲学院物理部2020</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 19 Aug 2020 18:02:04 +0900</lastBuildDate>
+    
+	<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>準備中</title>
+      <link>https://example.org/works/coming-soon/</link>
+      <pubDate>Wed, 19 Aug 2020 18:02:04 +0900</pubDate>
+      
+      <guid>https://example.org/works/coming-soon/</guid>
+      <description>準備中です https://twitter.com/rokkophysics http://www.st.rokko.ed.jp/festival/cultural/2020/index.html 概要 時 2020年9月19日（土） 場所 六甲学院（限定公開）・オンライン</description>
+    </item>
+    
+  </channel>
+</rss>
