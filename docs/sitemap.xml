@@ -3,33 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.org/welcome/</loc>
+    <loc>https://rokkophysicsclub.github.io/rpc-2020/welcome/</loc>
     <lastmod>2020-09-09T20:54:58+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/works/coming-soon/</loc>
+    <loc>https://rokkophysicsclub.github.io/rpc-2020/works/coming-soon/</loc>
     <lastmod>2020-08-19T18:02:04+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://rokkophysicsclub.github.io/rpc-2020/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://rokkophysicsclub.github.io/rpc-2020/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/works/</loc>
+    <loc>https://rokkophysicsclub.github.io/rpc-2020/works/</loc>
     <lastmod>2020-08-19T18:02:04+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/</loc>
+    <loc>https://rokkophysicsclub.github.io/rpc-2020/</loc>
     <lastmod>2020-08-19T18:02:04+09:00</lastmod>
     <priority>0</priority>
   </url>
