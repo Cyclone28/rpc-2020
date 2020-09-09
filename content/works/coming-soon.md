@@ -7,8 +7,8 @@ draft: false
 
 準備中です
 
-* [https://twitter.com/rokkophysics](六甲学院物理部Twitter)
-* [http://www.st.rokko.ed.jp/festival/cultural/2020/index.html](六好祭initium公式ホームページ)
+* [六甲学院物理部Twitter](https://twitter.com/rokkophysics)
+* [六好祭initium公式ホームページ](http://www.st.rokko.ed.jp/festival/cultural/2020/index.html)
 
 ### 概要
 * 時　2020年9月19日（土）
