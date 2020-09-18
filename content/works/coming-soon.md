@@ -2,6 +2,7 @@
 title: "準備中"
 date: 2020-08-19T18:02:04+09:00
 description: "文化祭概要など"
+image: "./img/favicon.png"
 draft: false
 ---
 
