@@ -429,6 +429,7 @@ osdファイルのフォーマットは
 と、動画を編集してニコニコ動画、YouTube,	Twitterにアップロードし、SNSでの広報活動にも余念がない出原後輩に感謝する。
 
 ## 最後に、
-PV：https://www.youtube.com/watch?v=64PLft4-smU
+PV：
+<iframe width="560" height="315" src="https://www.youtube.com/embed/64PLft4-smU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <span style="font-size:30px; color:green">オシロお絵描きよ、永遠なれ！</span>
