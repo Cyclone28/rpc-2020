@@ -10,7 +10,7 @@ weight: 30
 
 動画素材をたくさん送れなくてごめんなさい。
 
-<iframe width="600" height="338" src="https://www.youtube.com/embed/0WV6QDpBa2M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0WV6QDpBa2M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 海城中高物理部さんの公式文化祭サイトは[こちら](https://festival.kaijo-physics-club.work/)</br>
 また、海城中高物理部さんのtwitterは[こちら](https://twitter.com/kaijo_physics)

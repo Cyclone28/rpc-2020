@@ -9,4 +9,4 @@ weight: 8
 
 <div align="right">80th k_kiri</div>
 
-<iframe width="600" height="338" src="https://www.youtube.com/embed/TYzH-0FD7UA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TYzH-0FD7UA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
