@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>遺伝的アルゴリズムとニューラルネットワーク</title>
+<meta name="description" content="六甲学院物理部の2020年度オンライン文化祭非公式サイト">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/bootstrap.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/owl.carousel.css">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/owl.theme.css">
+
+
+  <link href="https://rokkophysicsclub.github.io/rpc-2020/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+ 
+
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+
+<link href="https://rokkophysicsclub.github.io/rpc-2020/css/custom.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://rokkophysicsclub.github.io/rpc-2020/img/favicon.png">
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-177509243-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+  <div id="all">
+      <div class="container-fluid">
+          <div class="row row-offcanvas row-offcanvas-left">
+              <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+  <div class="sidebar-content">
+    <h1 class="sidebar-heading"><a href="https://rokkophysicsclub.github.io/rpc-2020/">六甲学院物理部2020</a></h1>
+    
+      <p class="sidebar-p">六甲学院物理部の2020年度オンライン文化祭サイトです。（学校非公式）</p>
+    
+      <p class="sidebar-p">コロナに負けない！</p>
+    
+    <ul class="sidebar-menu">
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/welcome/">Welcome</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/works/">Works</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/afterword/">Afterword</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/about/">About</a></li>
+      
+    </ul>
+    <p class="social">
+  
+  
+  
+  <a href="https://twitter.com/rokkophysics" data-animate-hover="pulse" class="external twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/RokkoPhysicsClub" data-animate-hover="pulse" class="external">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  <a href="https://www.youtube.com/channel/UCvLDGaFKdbpQ7vELdrUSyCw" data-animate-hover="pulse" class="external">
+    <i class="fa fa-youtube"></i>
+  </a>
+  
+  
+</p>
+
+
+    <div class="copyright">
+      <p class="credit">
+        
+          &copy;2020 六甲学院物理部 |
+        
+        Template by <a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
+
+&amp; ported to Hugo by <a href="https://github.com/kishaningithub">Kishan B</a>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+      </p>
+    </div>
+  </div>
+</div>
+
+              
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="small-navbar visible-xs">
+  <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
+  <h1 class="small-navbar-heading"><a href="https://rokkophysicsclub.github.io/rpc-2020/">六甲学院物理部2020</a></h1>
+</div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+        <h1>遺伝的アルゴリズムとニューラルネットワーク</h1>
+        
+
+<div align="right">80th k_kiri</div>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="前置き">前置き</h3>
+
+<p>数年前からよく耳にするようになった、人工知能とは、どのように定義されているのだろうか。
+ディープラーニングなどを用いて、自身でデータを学習し、類推・分類を行うプログラムなのか。
+はたまた、人間と同じゲーム（ボードゲームなど含め）がプレイ出来たら、それだけで、人工知能と呼ぶことが出来るのか。
+最近、人間の考えたアルゴリズムに従っているだけで、自身で学習しないものも、人工知能と呼ばれているような気がする。
+私は全く詳しくないので、自分の作ったものを人工知能と呼ぶのが正しいのか分からないが、「人工知能」と宣伝した方が、宣伝効果があると思うので、勝手にこれを人工知能と呼ぶことにする。</p>
+
+<h3 id="概要">概要</h3>
+
+<p>今回作ったのは、ニューラルネットワークの重み推定を遺伝的アルゴリズムによって行う、neuro-evolutionという手法を用いた、ゲームをプレイする人工知能（勝手にそう呼ぶ）である。学習させるゲームはFlappyBirdを模倣したものにした。
+その理由はいくつかある。1つ目は、FlappyBirdはルールが単純で、作りやすいから。2つ目は、インターネット上で学習の成功例があったことだ。つまり、この研究はn番煎じ（$n\in\mathbb{N}$）である。
+<span style="font-size:small;">（車輪の再発明という言葉があるが、私は、勉強の為ならそれは無駄なことでは無いと思う。）</span></p>
+
+<h3 id="flappybirdのルール">FlappyBirdのルール</h3>
+
+<p>画面を流れる棒に当たらないよう、ジャンプして、隙間をよける。</p>
+
+<h2 id="neuro-evolution">Neuro-evolution</h2>
+
+<p>ニューラルネットワークの重みを、遺伝的アルゴリズムによって推定する方法。</p>
+
+<h3 id="ニューラルネットワークについて">ニューラルネットワークについて</h3>
+
+<p><img src="../../img/k_kiri/nn.JPG" alt="nn" /></p>
+
+<p>人間の脳内にある神経細胞（ニューロン）とニューロン同士がなす神経網
+を模倣した情報処理システムであり、学習させる（≒ニューロン同士の結合の重みを変化させる）ことで分類やパターン認識ができる。</p>
+
+<p><img src="../../img/k_kiri/neuron.JPG" alt="nn" />
+ネットワークを構成する人工ニューロンの図。
+前の層からの信号は、次の層のニューロンに伝わるときに重みづけされる。
+重みづけされた値をすべて足し合わせた数$u$を、
+活性化関数$f(u)$に代入し、活性化関数の出力値をまた次の層に伝える。詳しくは割愛。</p>
+
+<h3 id="遺伝的アルゴリズムについて">遺伝的アルゴリズムについて</h3>
+
+<h4 id="遺伝的アルゴリズムとは">遺伝的アルゴリズムとは</h4>
+
+<blockquote>
+<p>遺伝的アルゴリズムはデータ（解の候補）を遺伝子で表現した
+「個体」を複数用意し、適応度の高い個体を優先的に選択して
+交差・突然変異などの操作を繰り返しながら解を探索する。
+</br>&mdash;wikipedia</p>
+</blockquote>
+
+<p>つまり・・・</p>
+
+<p>生物の遺伝と適者生存のシステムを模倣したアルゴリズムであり、
+複雑な問題に対する最適解を探索することが出来る。</p>
+
+<h4 id="遺伝的アルゴリズムにおける-遺伝子">遺伝的アルゴリズムにおける「遺伝子」</h4>
+
+<p>特定の要素や解の特徴を遺伝子として表す。
+遺伝子をビット列や木構造で表すこともあるそうだが、
+今回はニューラルネットワークの重みであるので、小数の列を遺伝子とした。</p>
+
+<h4 id="一般的な遺伝的アルゴリズムの流れ">一般的な遺伝的アルゴリズムの流れ</h4>
+
+<ol>
+<li>ランダムな遺伝子を持った集団を作成する。</li>
+<li>各個体の適応度を計算する。</li>
+<li>交叉させたり、突然変異を起こしたりする。</li>
+<li>古い集団を新しい集団に置き換えて、段階2に戻る。</li>
+</ol>
+
+<h2 id="具体的な説明">具体的な説明</h2>
+
+<h3 id="実装">実装</h3>
+
+<p>実装には、processingを使用した。
+すぐにグラフィカルな表現ができ、簡単にプログラムを組むことが出来るため、
+中1のころから愛用している。
+（staticメンバ関数が実装できないという欠点を最近知った。）</p>
+
+<h3 id="どんな処理をしているのか">どんな処理をしているのか？</h3>
+
+<ol>
+<li>ランダムな遺伝子を持った集団を作成する。</br>
+遺伝子は、ニューラルネットワークの重みの配列。集団は全部で150体。
+ニューラルネットワークは3層構造。</br>
+入力値が4つで、[最短の上の障害物までのx方向の距離, 最短の上の障害物までのy方向の距離, 自身のy座標, 自身のy方向の速さ]。又、隠れ層のニューロンが5つ、出力層のニューロンは1つ。</li>
+<li>各個体の適応度を計算する。</br>
+障害物にぶつからずにどれだけ進めたかを適応度とする。</li>
+<li>交叉させたり、突然変異を起こしたりする。</br></li>
+<li>古い集団を新しい集団に置き換えて、段階2に戻る。</li>
+</ol>
+
+<h2 id="学習の過程">学習の過程</h2>
+
+<p>動画を御覧ください。（2:23～）
+urlあとで貼る</p>
+
+<h2 id="あとがき">あとがき</h2>
+
+<p>今度はディープラーニング勉強したい。
+うまく学習が進まないなーと悩んでいたが、入力値を正規化したらうまくいった（当たり前）。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+<li>岡 瑞起、池上 高志、ドミニク・チェン、青木 竜太、丸山 典宏　著, 「作って動かすALife ――実装を通した人工生命モデル理論入門」, オライリー・ジャパン, 2018</li>
+<li>Daniel Shiffman, 「Nature of Code Processingではじめる自然現象のシミュレーション」,</li>
+</ul>
+
+        
+        <a href="https://twitter.com/intent/tweet?button_hashtag=六甲学院物理部2020&ref_src=twsrc%5Etfw"
+          class="twitter-hashtag-button" data-show-count="false">Tweet #六甲学院物理部2020</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+      </div>
+  </div>
+  <script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/bootstrap.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.cookie.js"> </script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/ekko-lightbox.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.scrollTo.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/masonry.pkgd.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/owl.carousel.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/front.js"></script>
+
+
+
+</body>
+</html>

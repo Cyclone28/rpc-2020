@@ -6,18 +6,126 @@
     <description>Recent content in Works on 六甲学院物理部2020</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 19 Aug 2020 18:02:04 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2020 18:24:00 +0900</lastBuildDate>
     
 	<atom:link href="https://rokkophysicsclub.github.io/rpc-2020/works/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>準備中</title>
-      <link>https://rokkophysicsclub.github.io/rpc-2020/works/coming-soon/</link>
+      <title>オシロお絵描き</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/oscillo_drawing/</link>
+      <pubDate>Fri, 21 Aug 2020 18:24:00 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/oscillo_drawing/</guid>
+      <description>78期 越智一稀（既引退）-表示側制作 77期 伊藤大貴（既卒業）-データ生成 やあ、やあ知ってる？聞いた事ある？オシロお絵描きのその噂。オシロお絵</description>
+    </item>
+    
+    <item>
+      <title>LINEが嫌いすぎてLINE-Discord間の接続botを作った話</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/line-discord/</link>
+      <pubDate>Sun, 13 Sep 2020 11:51:00 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/line-discord/</guid>
+      <description>78th KEN_RP 注意 この記事は技術情報共有サービス&amp;rdquo;Qiita&amp;rdquo;にて私が投稿した技術記事を部誌掲載に当たり一部改変したものです。</description>
+    </item>
+    
+    <item>
+      <title>遺伝的アルゴリズムとニューラルネットワーク</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/neuro-evolution/</link>
+      <pubDate>Tue, 08 Sep 2020 17:46:34 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/neuro-evolution/</guid>
+      <description>80th k_kiri はじめに 前置き 数年前からよく耳にするようになった、人工知能とは、どのように定義されているのだろうか。 ディープラーニングなどを用いて、自身</description>
+    </item>
+    
+    <item>
+      <title>ミニゲーム</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/js_games/</link>
+      <pubDate>Wed, 19 Aug 2020 20:07:31 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/js_games/</guid>
+      <description>80th k_kiri スマホでプレイ可能です（たぶん）。 play!! rpc-shooting ・・・点数を競うシューティングゲーム。 （パソコンの場合は矢印キーで操作。モバイル端末はゲーム画面下</description>
+    </item>
+    
+    <item>
+      <title>ヘロンの噴水</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/herons-fountain/</link>
+      <pubDate>Sun, 13 Sep 2020 18:18:29 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/herons-fountain/</guid>
+      <description>80th k_kiri  </description>
+    </item>
+    
+    <item>
+      <title>プラズマに触れてみよう</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/plasma/</link>
+      <pubDate>Sun, 13 Sep 2020 18:36:41 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/plasma/</guid>
+      <description>78期 越智一稀 詳しい説明はこちら(2019年度部誌・模擬講義資料)</description>
+    </item>
+    
+    <item>
+      <title>物理部模試</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/mock-exam/</link>
+      <pubDate>Sun, 13 Sep 2020 19:00:54 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/mock-exam/</guid>
+      <description>解答用紙付きpdf版はこちら 試験要綱 試験時間 150分 配点 100点 合格点 50点 問題数 5題 問1 次の A-B 間の抵抗値を求めよ。ただし、各抵抗の抵抗値は</description>
+    </item>
+    
+    <item>
+      <title>Excelで動画再生してみた</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/excel-movie/</link>
+      <pubDate>Fri, 18 Sep 2020 22:07:47 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/excel-movie/</guid>
+      <description>80th k_kiri  </description>
+    </item>
+    
+    <item>
+      <title>ゼロから始めるMarkdown生活</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/markdown_life_from_zero/</link>
+      <pubDate>Thu, 17 Sep 2020 00:15:38 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/markdown_life_from_zero/</guid>
+      <description>80th NMKUA 今回はこの部誌の原稿に使われている Markdown について、 知識ゼロの初心者なりに話してみたいと思います。 (実を言うとこの原稿が僕の「はじめてのMar</description>
+    </item>
+    
+    <item>
+      <title>人工知能は下準備が肝心</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/nonno-project/</link>
+      <pubDate>Sun, 13 Sep 2020 07:28:04 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/nonno-project/</guid>
+      <description>80th NIIInonno; 新生华 去年 かねてからAI(人工知能)を作ってみたいと思っていたので、2019年の春ぐらいに完全自作でAI作った。 が、全く精度が揮わない。</description>
+    </item>
+    
+    <item>
+      <title>Google App Scriptで学校ホームページ上のお知らせの更新を取得し、通知を送る</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/kousin_tuuchi/</link>
       <pubDate>Wed, 19 Aug 2020 18:02:04 +0900</pubDate>
       
-      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/coming-soon/</guid>
-      <description>準備中です 六甲学院物理部Twitter 六好祭initium公式ホームページ 概要 時 2020年9月19日（土） 場所 六甲学院（限定公開）・オンライ</description>
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/kousin_tuuchi/</guid>
+      <description>80th k_kiri はじめに 作った理由 新型コロナウイルスの感染拡大によって、2020年3月から、全国の学校が休校となった。その不安定な毎日の中で学校からの連</description>
+    </item>
+    
+    <item>
+      <title>超簡易的ウイルス感染拡大シミュレーション</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/covid-19-simulation/</link>
+      <pubDate>Fri, 18 Sep 2020 21:58:55 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/covid-19-simulation/</guid>
+      <description>80th k_kiri ※あくまでイメージです。 簡易的な新型コロナウイルス感染拡大シミュレーションやってみました。 あくまでイメージです。 ルール： ・すれ違うと濃厚</description>
+    </item>
+    
+    <item>
+      <title>他の高校とのコラボ企画</title>
+      <link>https://rokkophysicsclub.github.io/rpc-2020/works/collaboration/</link>
+      <pubDate>Thu, 17 Sep 2020 21:57:57 +0900</pubDate>
+      
+      <guid>https://rokkophysicsclub.github.io/rpc-2020/works/collaboration/</guid>
+      <description>海城物理部の皆さん、動画を製作していただき本当にありがとうございます！ 動画素材をたくさん送れなくてごめんなさい。 海城中高物理部さんの公式文化</description>
     </item>
     
   </channel>

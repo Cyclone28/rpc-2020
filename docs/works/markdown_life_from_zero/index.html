@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>ゼロから始めるMarkdown生活</title>
+<meta name="description" content="六甲学院物理部の2020年度オンライン文化祭非公式サイト">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/bootstrap.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/owl.carousel.css">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/owl.theme.css">
+
+
+  <link href="https://rokkophysicsclub.github.io/rpc-2020/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+ 
+
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+
+<link href="https://rokkophysicsclub.github.io/rpc-2020/css/custom.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://rokkophysicsclub.github.io/rpc-2020/img/favicon.png">
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-177509243-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+  <div id="all">
+      <div class="container-fluid">
+          <div class="row row-offcanvas row-offcanvas-left">
+              <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+  <div class="sidebar-content">
+    <h1 class="sidebar-heading"><a href="https://rokkophysicsclub.github.io/rpc-2020/">六甲学院物理部2020</a></h1>
+    
+      <p class="sidebar-p">六甲学院物理部の2020年度オンライン文化祭サイトです。（学校非公式）</p>
+    
+      <p class="sidebar-p">コロナに負けない！</p>
+    
+    <ul class="sidebar-menu">
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/welcome/">Welcome</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/works/">Works</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/afterword/">Afterword</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/about/">About</a></li>
+      
+    </ul>
+    <p class="social">
+  
+  
+  
+  <a href="https://twitter.com/rokkophysics" data-animate-hover="pulse" class="external twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/RokkoPhysicsClub" data-animate-hover="pulse" class="external">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  <a href="https://www.youtube.com/channel/UCvLDGaFKdbpQ7vELdrUSyCw" data-animate-hover="pulse" class="external">
+    <i class="fa fa-youtube"></i>
+  </a>
+  
+  
+</p>
+
+
+    <div class="copyright">
+      <p class="credit">
+        
+          &copy;2020 六甲学院物理部 |
+        
+        Template by <a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
+
+&amp; ported to Hugo by <a href="https://github.com/kishaningithub">Kishan B</a>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+      </p>
+    </div>
+  </div>
+</div>
+
+              
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="small-navbar visible-xs">
+  <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
+  <h1 class="small-navbar-heading"><a href="https://rokkophysicsclub.github.io/rpc-2020/">六甲学院物理部2020</a></h1>
+</div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+        <h1>ゼロから始めるMarkdown生活</h1>
+        
+
+<div align="right">80th NMKUA</div>
+
+<p>今回はこの部誌の原稿に使われている <strong>Markdown</strong> について、<br />
+知識ゼロの初心者なりに話してみたいと思います。<br />
+(実を言うとこの原稿が僕の「<strong>はじめてのMarkdown</strong>」だったりします…)</p>
+
+<hr />
+
+<h2 id="markdownってどんなもの">Markdownってどんなもの？</h2>
+
+<p>Markdownとは見出しや図やリンク、太字や斜体などを共通の書き方で書けるようにしたものです。<br />
+特にブログなどに投稿されている文章の多くは、これで書かれていたりします。<br />
+ファイルの拡張子は<code>.md</code>です。<br />
+今回の文章で例を出すと</p>
+
+<pre><code class="language-md"> #  ゼロから始めるMarkdown生活
+ 今回はこの部誌の原稿に使われている **Markdown** について、  
+ 知識ゼロの初心者なりに話してみたいと思います。  
+</code></pre>
+
+<p>と書くだけで、この文章の上から3行を表示できます。<br />
+解説すると、<br />
+<code>#  ゼロから始めるMarkdown生活</code> の <code>#</code> がその行の文章が<strong>題名</strong>であることを意味していて、<br />
+<code>**Markdown** について</code> は <code>*</code> の間を<strong>強調して表示(太字)</strong>するということを意味しています。<br />
+残りの文章はそのままですね。<br />
+「簡単でしょ？」<br />
+(分かりづらかった方はすいません… 検索書ければ分かりやすいのたくさんあるのでそちらに…)</p>
+
+<hr />
+
+<h2 id="何ができるの">何ができるの？</h2>
+
+<p>ここではMarkdownでどう書けばどうなるかを一覧にしてみます。</p>
+
+<ol>
+<li>改行<br />
+&lt;記述&gt;
+<code>md
+あ
+い
+う
+え
+お  
+</code>
+最後の<code>お</code>のあとに(半角スペース2個)が入ってます<br />
+&lt;結果&gt;<br />
+あ
+い
+う
+え
+お<br />
+&lt;解説&gt;<br />
+半角スペースを2個以上並べると改行になります。<br />
+これは何なしらの文法で改行して書きたいけど、結果は改行してほしくないときに使えます。<br />
+なお&rdquo;普通の改行&rdquo;は改行とみなしてくれません。</li>
+<li>太字・斜体<br />
+&lt;記述&gt;
+<code>md
+*斜体*
+_斜体_
+**太字**
+__太字__
+***太字&amp;斜体***
+___太字&amp;斜体___
+</code>
+&lt;結果&gt;<br />
+<em>斜体</em><br />
+<em>斜体</em><br />
+<strong>太字</strong><br />
+<strong>太字</strong><br />
+<strong><em>太字&amp;斜体</em></strong><br />
+<strong><em>太字&amp;斜体</em></strong><br />
+&lt;説明&gt;<br />
+<code>*</code>でも<code>_</code>でも結果は同じになります。</li>
+
+<li><p>見出し<br />
+&lt;記述&gt;</p>
+
+<pre><code class="language-md"># 見出し1  
+## 見出し2  
+### 見出し3
+#### 見出し4
+##### 見出し5
+###### 見出し6
+</code></pre>
+
+<p>&lt;結果&gt;</p>
+
+<h1 id="見出し1">見出し1</h1>
+
+<h2 id="見出し2">見出し2</h2>
+
+<h3 id="見出し3">見出し3</h3>
+
+<h4 id="見出し4">見出し4</h4>
+
+<h5 id="見出し5">見出し5</h5>
+
+<h6 id="見出し6">見出し6</h6>
+
+<p>&lt;解説&gt;<br />
+<code>#</code>を並べるだけで見出しになります。たくさん並べれば並べるほど小さい見出しになります。<br />
+(この書き方の単純さはWordも顔負けかも)</p></li>
+
+<li><p>リスト<br />
+&lt;記述&gt;<br />
+```md</p>
+
+<ul>
+<li>部活
+
+<ul>
+<li>科学部</li>
+<li>物理部</li>
+<li>部長</li>
+<li>副部長</li>
+<li>会計</li>
+<li>生物部</li>
+<li>天文気象部</li>
+</ul></li>
+<li>委員会</li>
+<li>文化祭委員会</li>
+<li>体育祭委員会</li>
+<li>クラス
+```
+&lt;結果&gt;
+***</li>
+<li>部活
+
+<ul>
+<li>科学部</li>
+<li>物理部</li>
+<li>部長</li>
+<li>副部長</li>
+<li>会計</li>
+<li>生物部</li>
+<li>天文気象部</li>
+</ul></li>
+<li>委員会
+
+<ul>
+<li>文化祭委員会</li>
+<li>体育祭委員会</li>
+</ul></li>
+<li>クラス<br />
+***
+&lt;説明&gt;<br />
+<code>- 項目名</code>とかくと、リストが作れます。さらにリストの中にリストをまたつくることもできます。</li>
+</ul></li>
+
+<li><p>番号付きリスト<br />
+&lt;記述1&gt;
+```md</p>
+
+<ol>
+<li>1つめ<br /></li>
+<li>2つめ<br /></li>
+<li>3つめ<br />
+```
+&lt;結果1&gt;<br />
+***</li>
+<li>1つめ<br /></li>
+<li>2つめ<br /></li>
+<li>3つめ<br />
+***
+&lt;記述2&gt;
+```md</li>
+<li>これも1つめ<br /></li>
+<li>これも2つめ<br /></li>
+<li>これも3つめ<br />
+```
+&lt;結果2&gt;
+***</li>
+<li>これも1つめ<br /></li>
+<li>これも2つめ<br /></li>
+<li>これも3つめ
+***
+&lt;解説&gt;<br />
+上の書き方だと大差ありませんが、下の<code>1</code>ばかり書く書き方は数字を降り間違えることがなく、編集に強くなります。<br /></li>
+</ol></li>
+
+<li><p>引用<br />
+&lt;記述&gt;</p>
+
+<pre><code class="language-md">&gt; 「天才とは99%の努力と1%のひらめきである」
+</code></pre>
+
+<p>&lt;結果&gt;</p>
+
+<hr />
+
+<blockquote>
+<p>「天才とは99%の努力と1%のひらめきである」</p>
+
+<hr />
+
+<p>&lt;解説&gt;<br />
+引用した文章を分かりやすく、明示できます。</p>
+</blockquote></li>
+
+<li><p>プログラムを書き込む<br />
+&lt;記述&gt;</p>
+
+<pre><code class="language-md">'''c
+#include&lt;stdio.h&gt;
+  
+int main(){
+   puts(&quot;Hello, World.&quot;);
+ }
+
+'''
+</code></pre>
+
+<p>(↑実際は <code>'</code> を <code>Shift押しながら@</code> に置き換えて下さい)<br />
+&lt;表示&gt;
+```c
+#include<stdio.h></p></li>
+</ol>
+
+<p>int main(){<br />
+     puts(&ldquo;Hello, World.&rdquo;);<br />
+   }</p>
+
+<pre><code>   &lt;解説&gt;  
+   `'''`の後に拡張子をつなげると、様々なプログラミング言語のコードを分りやすく書き込むことが出来ます。ちなみに、`&lt;表示&gt;`の部分も`'''md`と書いて表示させてます。プログラムがつきものの、物理部からすればとても便利な書式なのです。  
+1. 横線  
+   &lt;記述&gt;  
+   ```md
+   ***
+   ___
+   ---
+</code></pre>
+
+<p>&lt;結果&gt;</p>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<p>&lt;解説&gt;
+   横線を簡単に引けます。 <code>***</code> でも <code>___</code> でも <code>---</code> でも効果は変わりません。内容の切れ目などに最適です。
+1. リンク<br />
+   &lt;記述&gt;</p>
+
+<pre><code class="language-md">   [六甲学院](http://www.rokkogakuin.ed.jp/public_html/)
+</code></pre>
+
+<p>&lt;結果&gt;<br />
+   <a href="http://www.rokkogakuin.ed.jp/public_html/">六甲学院</a><br />
+   &lt;解説&gt;<br />
+   長くて見にくいURLを、簡単に文字列に置き換えられます。<br />
+1. 画像<br />
+   &lt;記述&gt;</p>
+
+<pre><code class="language-md">   ![物理部ロゴ](physicsclub_logo.png)
+</code></pre>
+
+<p>&lt;結果&gt;<br />
+   <img src="../../img/NMKUA/physicsclub_logo.png" alt="物理部ロゴ" /><br />
+   &lt;解説&gt;<br />
+   画像もパスを書くか、URLを書くだけで簡単に画像をのせることができて便利です。</p>
+
+<hr />
+
+<p>ここでは部誌である以上、見て頂いて便利だと分かりやすいと思った文法だけに絞って紹介させていただきました。<br />
+他にも様々な機能があり、さらに拡張機能も存在していて、数式など多様な記述ができます。ぜひ興味を持たれた方は、他の記述方法も検索してみて下さい。</p>
+
+<hr />
+
+<h2 id="どう書けばいいの">どう書けばいいの？</h2>
+
+<p>メモ帳でも、テキストエディタなら何でも書くことは書けます。(プログラムをメモ帳でも無理やり書けるのと同じです)<br />
+しかし <code>#</code> とか <code>*</code> を変換するには対応したソフトが必要です。<br />
+(今皆さんが見られているのは変換された完成形になりますが、この文章を書くときには例で書いたような  <code>#</code> とか <code>*</code> を使う形で書きます。)<br />
+ここで「有名なソフト一覧」とかと書いてしまうと、もはや部誌じゃないので割愛させていただいて、一つだけ紹介します。</p>
+
+<hr />
+
+<blockquote>
+<p>Visual Studio Code<br />
+<img src="../../img/NMKUA/240px-Visual_Studio_Code_1.35_icon.svg.png" alt="VSCodeロゴ" /><br />
+Microsoftが無料で公開してるエディター(プログラムを書くための超高機能なメモ帳と思ってください)です。様々な機能を持っていて、Windowsだけでなく、MacやLinuxでも使えます。個人的にはここ数年で大きくシェアが伸びていると感じていて、実際ここの部活でも何人かはこれを使ってプログラムを書いています。</p>
+
+<hr />
+
+<p>そんなプログラムを書くはずの Visual Studio Code(以下VScode) ですが、なんとMarkdownを書くのにも適しているのです。<br />
+<img src="../../img/NMKUA/vscode_view.png" alt="VSCode操作画面" /><br />
+上の画像はこの文章をVScodeを使って書いているところの画像です。<br />
+「横に今見ている文章と同じものがあるじゃないですか!?」<br />
+その通りです。なんとVScodeは拡張機能なしでリアルタイムで書いたMarkdownのプレビューを表示する機能があるのです。<br />
+さらに拡張機能を追加すればMarkdownをPDFやHTMLにも変換できます。<br />
+これは普段からVScodeを使っている人からしてはうれしいこと限りないです。<br />
+ぜひVScodeをインストールされている方でまだMarkdownを書いたことのない方は、ぜひ一度試して見てください。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回は初心者ながらMarkdownの紹介の部誌を書かせていただきましたが、実際に書いていて見出しの部分だったり、画像を載せられるところだったりと、使いこなせばかなり便利ものだと思えました。またMarkdownの書き方はプログラミング言語に比べれば簡単で、誰でも習得しやすいとも思いました。今後も使っていこうと思っています。<br />
+どうぞご興味を持たれた方は、<code>Markdown</code>で検索してみてください。<br />
+(この部誌よりわかりやすいページがたくさんございますので…)</p>
+
+        
+        <a href="https://twitter.com/intent/tweet?button_hashtag=六甲学院物理部2020&ref_src=twsrc%5Etfw"
+          class="twitter-hashtag-button" data-show-count="false">Tweet #六甲学院物理部2020</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+      </div>
+  </div>
+  <script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/bootstrap.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.cookie.js"> </script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/ekko-lightbox.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.scrollTo.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/masonry.pkgd.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/owl.carousel.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/front.js"></script>
+
+
+
+</body>
+</html>

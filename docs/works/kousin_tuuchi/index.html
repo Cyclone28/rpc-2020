@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Google App Scriptで学校ホームページ上のお知らせの更新を取得し、通知を送る</title>
+<meta name="description" content="六甲学院物理部の2020年度オンライン文化祭非公式サイト">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/bootstrap.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/owl.carousel.css">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/owl.theme.css">
+
+
+  <link href="https://rokkophysicsclub.github.io/rpc-2020/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+ 
+
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+
+<link href="https://rokkophysicsclub.github.io/rpc-2020/css/custom.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://rokkophysicsclub.github.io/rpc-2020/img/favicon.png">
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-177509243-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+  <div id="all">
+      <div class="container-fluid">
+          <div class="row row-offcanvas row-offcanvas-left">
+              <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+  <div class="sidebar-content">
+    <h1 class="sidebar-heading"><a href="https://rokkophysicsclub.github.io/rpc-2020/">六甲学院物理部2020</a></h1>
+    
+      <p class="sidebar-p">六甲学院物理部の2020年度オンライン文化祭サイトです。（学校非公式）</p>
+    
+      <p class="sidebar-p">コロナに負けない！</p>
+    
+    <ul class="sidebar-menu">
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/welcome/">Welcome</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/works/">Works</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/afterword/">Afterword</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/about/">About</a></li>
+      
+    </ul>
+    <p class="social">
+  
+  
+  
+  <a href="https://twitter.com/rokkophysics" data-animate-hover="pulse" class="external twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/RokkoPhysicsClub" data-animate-hover="pulse" class="external">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  <a href="https://www.youtube.com/channel/UCvLDGaFKdbpQ7vELdrUSyCw" data-animate-hover="pulse" class="external">
+    <i class="fa fa-youtube"></i>
+  </a>
+  
+  
+</p>
+
+
+    <div class="copyright">
+      <p class="credit">
+        
+          &copy;2020 六甲学院物理部 |
+        
+        Template by <a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
+
+&amp; ported to Hugo by <a href="https://github.com/kishaningithub">Kishan B</a>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+      </p>
+    </div>
+  </div>
+</div>
+
+              
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="small-navbar visible-xs">
+  <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
+  <h1 class="small-navbar-heading"><a href="https://rokkophysicsclub.github.io/rpc-2020/">六甲学院物理部2020</a></h1>
+</div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+        <h1>Google App Scriptで学校ホームページ上のお知らせの更新を取得し、通知を送る</h1>
+        
+
+<div align="right">80th k_kiri</div>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="作った理由">作った理由</h3>
+
+<p>　新型コロナウイルスの感染拡大によって、2020年3月から、全国の学校が休校となった。その不安定な毎日の中で学校からの連絡が増加し、かつ重要になった。六甲学院を含む多くの学校では、ホームページ上に学校からのお知らせが掲載されることが多いだろう。しかし、度々学校ホームページを確認するのは面倒だ。そこで、学校ホームページ上のお知らせの更新を検知し、通知を送りたいと思った。</p>
+
+<h3 id="概要">概要</h3>
+
+<p>　作ったものはGoogle App Script<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> （以下、”GAS”と表記）を使用して学校ホームページをスクレイピング<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>し、
+もし更新されていた場合、私が普段使用しているチャットソフトDiscordに通知を送るというものだ。
+この記事ではホームページの更新の検出のみを扱い、通知を送る部分については割愛する。
+工夫次第で、スマートフォンにメールを送ったり、LINEに送ったりすることも可能だ。</p>
+
+<p>　ここでは、六甲学院のホームページを具体例として取り上げ、製作の過程やプログラムの仕組みを説明する。他のウェブページでも応用が可能だろう。
+<img src="../../img/k_kiri/sample.png" alt="sample_image" /></p>
+
+<p><img src="../../img/k_kiri/app_script_logo.png" alt="app_script_logo" /></p>
+
+<h2 id="製作の過程">製作の過程</h2>
+
+<h3 id="ウェブページのhtmlを見てみる">ウェブページのHTMLを見てみる</h3>
+
+<p>　ほとんどのウェブページはHTML（HyperText Markup Language）で書かれている。
+HTMLは、ウェブページを作成するためのマークアップ言語である。
+マークアップというのは、文書の各部分が果たす役割がわかるように目印をつけるという意味だ。
+HTMLはコンピュータに理解できるように文書の構造を定義するための書き方だと言うこともできるだろう。
+実際に使われているHTMLを見てみる。サンプルとして
+<a href="http://rokkogakuin.ed.jp/rblog/news/">六甲学院からのお知らせ</a>
+のHTMLを取り上げる。ブラウザでアクセスして右クリックし、「ページのソースを表示」や「検証」をクリックするとこのような文字列が現れる。
+<img src="../../img/k_kiri/dev_mode.png" alt="dev_mode" /></p>
+
+<p>このように、HTMLタグと呼ばれる&lt;&gt;記号で囲まれたもので構造化された文書がウェブページを形作っている。</p>
+
+<h3 id="スクレイピング">スクレイピング</h3>
+
+<p>　ウェブページが更新されたかどうかは、そのウェブページ（のHTML）を保存しておき、今のウェブページとの差分を調べるとわかる（RSSが提供されている場合はそれを使えば簡単かつ的確）。
+また、通知を送るためにお知らせ記事のタイトルや内容をスクレイピングして取得したいと思った。
+先ほどの、六甲学院からのお知らせページのHTMLを見てみると、各お知らせは&lt;article&gt;[記事の中身]&lt;/article&gt;というarticleタグで囲まれていることがわかる。
+ここから記事の情報を取得していく。
+ちなみに六甲学院からのお知らせページの記事部分は以下のような構造だとわかった。</p>
+
+<pre><code class="language-html">&lt;article id=&quot;post-000&quot; class=&quot;[細かい属性]&quot;&gt;
+  &lt;header class=&quot;entry-header&quot;&gt;
+    &lt;h2 class=&quot;entry-title&quot;&gt;
+      &lt;a href=&quot;[記事単体ページへのリンク]&quot; rel=&quot;bookmark&quot;&gt;[記事タイトル]&lt;/a&gt;
+      &lt;span class=&quot;meta-date&quot;&gt;[記事が作成された日時]&lt;/span&gt;
+    &lt;/h2&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&quot;entry-content&quot;&gt;
+    [記事本文]
+  &lt;/div&gt;
+&lt;/article&gt;
+</code></pre>
+
+<h3 id="gasを使う">GASを使う</h3>
+
+<p>　楽にHTMLの情報を取得するためにGASのParserというライブラリを使用した。
+このライブラリは指定した文字列から文字列までを抜き出すという単純な働きをするものだ。
+これを使用し、articleタグ内のタイトルや記事本文を抽出する。
+HTMLから情報を抽出するために、このライブラリの他に正規表現<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>を用いたパターンマッチングも行った。
+試行錯誤の結果、以下のようなコードになった（HTMLをパースしている箇所のみ抜粋）。</p>
+
+<pre><code class="language-javascript">//ホームページのHTMLを取得
+var content = UrlFetchApp.fetch(target_url).getContentText('utf-8');
+var data = Parser.data(content).from('&lt;h2 class=&quot;entry-title&quot;&gt;').to('&lt;/h2&gt;').build();
+//記事タイトル取得
+var title = Parser.data(data).from('rel=&quot;bookmark&quot;&gt;').to('&lt;/a&gt;').build();
+//記事URL取得
+var article_url = decodeURI(Parser.data(data).from('&lt;a href=&quot;').to('&quot; rel=&quot;bookmark&quot;&gt;').build());
+
+var article = Parser.data(content).from('&lt;div class=&quot;entry-content&quot;&gt;').to('&lt;/div&gt;').build();
+//pタグに囲まれた部分を配列として取得
+var paragraph_list = Parser.data(article).from('&lt;p&gt;').to('&lt;/p&gt;').iterate();
+
+var article_txt = '';  //ここに記事の文字列を代入する
+for (let i = 0; i &lt; paragraph_list.length; i++) {
+  //改行を置き換え、一応他のタグを消す
+  paragraph_list[i] = paragraph_list[i].replace(/&lt;br \/&gt;/g, '\n');
+  paragraph_list[i] = paragraph_list[i].replace(/&lt;\/.*?&gt;/g, '');
+  paragraph_list[i] = paragraph_list[i].replace(/&lt;.*?&gt;/g, '');
+  //段落ごとに改行
+  article_txt += paragraph_list[i] + '\n';
+}
+</code></pre>
+
+<h3 id="通知を送るために">通知を送るために</h3>
+
+<p>　HTMLから取得した情報をデータベースに保存し、更新を検知したい。データベースの代わりにGoogle Spread Sheet<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup>を使いデータを保存する。具体的なソースコードは割愛する。</p>
+
+<p>　もし更新があった場合、Discordやメール、LINEなどに通知を送り、データベースを更新する。（「line bot」・「discord bot」などで検索すれば様々な情報が見つかる）
+GASにはトリガーという、作成したスクリプトをGoogleのサーバー上で定期実行できるとても便利な機能があるため、トリガーを設定し、10分毎くらいに実行されるよう設定する。
+あまりに頻繁に実行すると相手（ここでは六甲学院ホームページ）のサーバーに負担がかかったり、そもそもGASの制限に引っかかったりする可能性があるので、注意する。</p>
+
+<h2 id="改良や応用等">改良や応用等</h2>
+
+<ul>
+<li>日本語を含むリンクはデコードしておいた方が見やすい。GASでは関数1つで可能。</li>
+<li>記事内にあるリンクは別に取得しておくと便利。</li>
+<li>学校からの連絡ではなぜかpdfファイルが添付されていることが多い。そこで記事内に、pdfファイルのリンクがあった場合、pdf内の文書を文字列として取り出す機能を追加した。</li>
+<li>応用して、休校中に課題が配信されたGoogle Classroomの更新も取得することができた。</li>
+</ul>
+
+<h2 id="あとがき">あとがき</h2>
+
+<p>　読んでいただきありがとうございました。
+是非、実際に作ってみてください。ウェブページをクロールする際には著作権や利用規約に気を付けてください。</p>
+
+<p>追伸：コロナウイルス関連の情報は特別に学校サイトの別の部分にまとめられてしまい、作ったプログラムは、あまり役に立たなかった。残念。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<p>多くのサイトを参考にさせて頂いた。紙面の都合上、特に役に立ったサイト・本のみを掲載する。</p>
+
+<ul>
+<li>GASで簡単WEBスクレイピング！HTMLを簡単にパースできるライブラリParserを使ってみた
+（<a href="https://www.kotanin0.work/entry/2019/01/06/200000）">https://www.kotanin0.work/entry/2019/01/06/200000）</a></li>
+<li>Google Apps Scriptで正規表現を使って必要な情報を抽出する最も簡単なスクリプト
+（<a href="https://tonari-it.com/gas-regular-expression/）">https://tonari-it.com/gas-regular-expression/）</a></li>
+<li>GoogleSpreadSheetからdiscordにpost
+（<a href="https://qiita.com/fishkiller/items/369035f70c4ff4c4677b）">https://qiita.com/fishkiller/items/369035f70c4ff4c4677b）</a></li>
+<li>加藤 耕太(著)，Pythonクローリング&amp;スクレイピング（技術評論社）
+Pythonの本だが、基礎知識を身に着けるのにとても役立った。</li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Google App Script </br> JavaScript ベースのスクリプト言語。スクリプトはGoogleのサーバーで実行される。その為、自分でサーバーを用意せずとも便利なツール・システムを無料でつくることができる。各種Googleサービスとの連携が容易な点も魅力。
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">スクレイピング </br> ウェブサイトから情報を抽出すること。
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">正規表現 </br> 文字列の集合を一つの文字列で表現する方法の一つ。
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">Google Spread Sheet </br> Google製の表計算ソフト。ブラウザ上で誰でも無料で使える。いつかマイクロソフトのExcelより使われるようになるだろう（筆者の勝手な予想）。
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+        
+        <a href="https://twitter.com/intent/tweet?button_hashtag=六甲学院物理部2020&ref_src=twsrc%5Etfw"
+          class="twitter-hashtag-button" data-show-count="false">Tweet #六甲学院物理部2020</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+      </div>
+  </div>
+  <script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/bootstrap.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.cookie.js"> </script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/ekko-lightbox.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.scrollTo.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/masonry.pkgd.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/owl.carousel.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/front.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>LINEが嫌いすぎてLINE-Discord間の接続botを作った話</title>
+<meta name="description" content="六甲学院物理部の2020年度オンライン文化祭非公式サイト">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/bootstrap.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/owl.carousel.css">
+<link rel="stylesheet" href="https://rokkophysicsclub.github.io/rpc-2020/css/owl.theme.css">
+
+
+  <link href="https://rokkophysicsclub.github.io/rpc-2020/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+ 
+
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+
+<link href="https://rokkophysicsclub.github.io/rpc-2020/css/custom.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://rokkophysicsclub.github.io/rpc-2020/img/favicon.png">
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-177509243-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+  <div id="all">
+      <div class="container-fluid">
+          <div class="row row-offcanvas row-offcanvas-left">
+              <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+  <div class="sidebar-content">
+    <h1 class="sidebar-heading"><a href="https://rokkophysicsclub.github.io/rpc-2020/">六甲学院物理部2020</a></h1>
+    
+      <p class="sidebar-p">六甲学院物理部の2020年度オンライン文化祭サイトです。（学校非公式）</p>
+    
+      <p class="sidebar-p">コロナに負けない！</p>
+    
+    <ul class="sidebar-menu">
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/welcome/">Welcome</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/works/">Works</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/afterword/">Afterword</a></li>
+      
+        <li><a href="https://rokkophysicsclub.github.io/rpc-2020/about/">About</a></li>
+      
+    </ul>
+    <p class="social">
+  
+  
+  
+  <a href="https://twitter.com/rokkophysics" data-animate-hover="pulse" class="external twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/RokkoPhysicsClub" data-animate-hover="pulse" class="external">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  <a href="https://www.youtube.com/channel/UCvLDGaFKdbpQ7vELdrUSyCw" data-animate-hover="pulse" class="external">
+    <i class="fa fa-youtube"></i>
+  </a>
+  
+  
+</p>
+
+
+    <div class="copyright">
+      <p class="credit">
+        
+          &copy;2020 六甲学院物理部 |
+        
+        Template by <a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
+
+&amp; ported to Hugo by <a href="https://github.com/kishaningithub">Kishan B</a>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+      </p>
+    </div>
+  </div>
+</div>
+
+              
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="small-navbar visible-xs">
+  <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
+  <h1 class="small-navbar-heading"><a href="https://rokkophysicsclub.github.io/rpc-2020/">六甲学院物理部2020</a></h1>
+</div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+        <h1>LINEが嫌いすぎてLINE-Discord間の接続botを作った話</h1>
+        
+
+<div align="right">78th KEN_RP</div>
+
+<h2 id="注意">注意</h2>
+
+<p><strong>この記事は技術情報共有サービス&rdquo;Qiita&rdquo;にて私が投稿した技術記事を部誌掲載に当たり一部改変したものです。ご了承ください。</strong></p>
+
+<p><strong>元記事はこちら→<a href="https://qiita.com/KENRP/items/6cd8d9ce0a93df249937">【ゼロから解説】LINEとDiscordのグループをbotで接続する【無料･高速･鯖いらず】</a></strong></p>
+
+<h2 id="前置き">前置き</h2>
+
+<p>(だらだらとした文章を書くのが好きなので冗長になってしまいますがご了承を。適当に読み飛ばしてください。)</p>
+
+<p>私はメッセージングアプリとして主にDiscordを使っているんですが、これがメチャクチャ使いよいんですよね。一度この「1つのサーバーに小部屋がたくさんある」形式に慣れてしまうともうLINEなんて使いにくくて戻れません。</p>
+
+<p>けれど世間で一般に使われているメッセージングアプリはLINEであり、その普及率は95%を超えています<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>。かく言う私もスマホにLINEはインストールしてあります。また、LINEをメインに使っている人たちの中には「Discord？なにそれ？慣れるのめんどそうだね笑」なんて人も多いのではないでしょうか。</p>
+
+<p>そこで私が考えついた答えがこれです。
+<strong>「DiscordとLINEのトークルーム接続したらええやん」</strong>
+けれど困ったことに、私の家にはサーバーがありません。電子レンジも冷蔵庫もあるのにサーバーはありません。そこで、botをサーバーレスで構築することを目的とします。
+はい。というわけで実装していきましょう。</p>
+
+<h2 id="実装方法">実装方法</h2>
+
+<h3 id="材料">材料</h3>
+
+<h5 id="google-apps-script-gas">Google Apps Script(GAS)</h5>
+
+<p>Google Drive上に置けるサーバーサイドスクリプト環境。無料なのに常時起動してpost監視とかできるので、おうちにサーバーがない人類の強い味方。言語はJavaScriptと互換性あり。</p>
+
+<h5 id="glitch">Glitch</h5>
+
+<p>Node.jsでアプリ開発ができるサービス。結構なんでもできる有能くん。これは常時起動は出来ないけどWebアプリ簡単に作れるのでよい。後述のUptime Robotで常時起動できる。</p>
+
+<h5 id="discord-js">Discord.js</h5>
+
+<p>Discord botのいろいろを詰め込んだJSライブラリ。詳しくは<a href="https://discord.js.org/#/docs/main/stable/general/welcome">公式リファレンス</a>見てね。</p>
+
+<h5 id="line-messaging-api">LINE Messaging API</h5>
+
+<p>LINE botのいろいろを詰め込んだAPI。公式リファレンスは<a href="https://developers.line.biz/ja/reference/messaging-api/">こちら</a>。</p>
+
+<h5 id="uptime-robot">Uptime Robot</h5>
+
+<p><del>5分ごととかの間隔で指定したアドレス宛にHTTPリクエストを送ってくれる。Glitchは5分でスリープするので、これを使って常時起動させる(ちょっと怪しいけど一応公式推奨の方法)。有料だが無料プランあり。</del>
+<strong>追加情報いただきました。どうやら現在は使えない方法のようです。
+役割としては「定期的にpostを投げる」だけなので、GASのトリガー機能を使って何とかできそうです。
+時間ができたら書き足しますが、参考になりそうなリンクを張っておきます。
+<a href="http://pineplanter.moo.jp/non-it-salaryman/2016/05/20/google-apps-script-minute-timer/">Google Apps Script: 分単位で実行できる機能があった！ - 非IT企業に勤める中年サラリーマンのIT日記</a></strong></p>
+
+<h3 id="設計">設計</h3>
+
+<p>基本的にはLINE→Discordのメッセージ伝達をするDiscord上のbot(以下D-bot)と、Discord→LINEのメッセージ伝達をするLINE上のbot(以下L-bot)の2機から成っています。</p>
+
+<h5 id="d-bot">D-bot</h5>
+
+<p>こいつは比較的簡単で、
+①Messaging APIを使ってGASでLINEメッセージを取得する。
+②DiscordのWebhookにメッセージを投げる。
+これで終わります。
+まあちょっと難しいところというか嵌まりやすいポイントはありますがそこまで苦戦はしないはずです。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/3b5e9ac9-57cd-19c0-4e53-339a505bd5b4.png" alt="D-bot diagram-Page-1 (1).png" /></p>
+
+<h5 id="l-bot">L-bot</h5>
+
+<p>これが結構しんどかったです。最初はGASだけで完結させる予定だったんですが、Discordの仕様のせいでよく知らないGlitchを使うハメになりました。
+動作は、
+(⓪GlitchをUptime Robotで常時稼働させる)
+①Glitchで実装したDiscord bot(D-botとは別物)でDiscordのメッセージを取得。
+②GlitchからGASへメッセージの内容をpostする。
+③GASでGlitchからのpostを受け取り、Messaging APIを使ってLINEに投げる。
+という感じです。D-botよりちょっと複雑ですね。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/6b292cfa-cc48-0ded-d123-6e560f74f02a.png" alt="D-bot diagram (2).png" /></p>
+
+<p>それでは次項からbot作成に入りましょう。</p>
+
+<h2 id="lineのbot-公式アカウント-を作る-各種設定">LINEのbot(公式アカウント)を作る&amp;各種設定</h2>
+
+<p>(以下、画像は2020/03/06現在のものです)</p>
+
+<h4 id="1-アカウントを開設する">1. アカウントを開設する</h4>
+
+<p>まずは<a href="https://developers.line.biz/ja/">LINE Developersのページ</a>で開発者登録行います。リンクから飛んで右上のボタンからログインをしましょう。
+初回ログイン時には開発者登録を求められるので、必要事項を記入して登録しましょう。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/e6d2c4c8-df7b-1b05-8d0f-d5d45b41946b.png" alt="06.png" />
+開発者登録が済んだら、次はプロバイダーを作成します。<a href="https://developers.line.biz/console/">開発者コンソール</a>から「作成」を押して新規プロバイダーを作成します(画像は私のものなので既に1つプロバイダーが作成されています。また言語設定は右下から変更できます)。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/f6208893-447c-f6a8-6fee-940fa8228b86.png" alt="07.png" />
+プロバイダー名を入力してプロバイダーを作成すると、「登録されているチャネルはありません。」のメッセージと共にチャネル設定画面が出るはずです。ここで、「Messaging API」を選択して新規チャネルを作成します。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/2267be29-9419-cc3b-2e8a-72f3f1b1d8c1.png" alt="08.png" />
+チャネルの情報を入力する画面になるので、情報を入力していきましょう。アカウントの名前、説明は適当でいいです。業種は「個人→その他」、メアドはLINEの登録アドレスでよいでしょう。任意項目は埋めなくとも問題ありません。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/5da6a007-08ca-31db-7efa-72b54160e494.png" alt="09.png" />
+これでアカウント開設が完了しました！</p>
+
+<h4 id="2-tokenの取得とかmessaging-apiの設定とかその他">2. Tokenの取得とかMessaging APIの設定とかその他</h4>
+
+<p>アカウント開設が完了した後の画面の上部メニューから「Messaging API」タブを選択します。なおこのページには<a href="https://developers.line.biz/console/">LINE Developersコンソール</a>からもアクセス出来ます。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/e23d8021-821a-ea31-e655-2064b00cefe9.png" alt="10.png" />
+Messaging APIタブの最下部にある「チャネルアクセストークン（ロングターム）」から、その右にある「発行」ボタンを押してTokenを発行します。このTokenはあとで必要になるのでどこかに控えておきましょう。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/94ca51ff-aab5-49c0-55bc-a867c9462a05.png" alt="11.png" />
+その上部の「グループ・複数人チャットへの参加を許可する」を「有効」、「応答メッセージ」「挨拶メッセージ」を「無効」に設定しておきましょう。Webhookは後で設定します。
+これでアカウントの設定はWebhookの設定を残して終わりです！次はDiscordのWebhookを取得しに行きましょう。</p>
+
+<h2 id="discordのwebhook-urlを取得する">DiscordのWebhook URLを取得する</h2>
+
+<p>まずDiscordにアクセスします。デスクトップアプリ版でもブラウザ版でも構いません。
+トーク共有をしたいサーバーで「サーバー設定→ウェブフック」に行きます(そのサーバーに対して管理者権限を持っていることを前提としています)。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/a6acde0c-f272-d34b-2f5b-e9eabdceb203.png" alt="12.png" />
+青色の「ウェブフックを作成」ボタンを押して共有したいチャンネルを選択し、ウェブフックURLをコピーした後に「保存」を押して終了します。なお、名前やアイコンなどの各種設定は後から変更可能です。<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/c7f3cc0a-e349-c150-b2d2-85f38d62fb8d.png" alt="image.png" />
+このURLも後で使用するのでそれと分かるように控えておきましょう。
+ではいよいよbotの実装に入っていきましょう。</p>
+
+<h2 id="google-apps-script-gas-の利用">Google Apps Script(GAS)の利用</h2>
+
+<h3 id="gasでbot-の一部-を実装する">GASでbot(の一部)を実装する</h3>
+
+<p><a href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a>にアクセスして右クリックし、その他→Google Apps Scriptと進んでGASプロジェクトを作成しましょう。
+コード作成画面になるので、botのコードを打ち込んでいきます。ついでに分かりやすくファイルのリネームも済ませておきましょう。</p>
+
+<pre><code class="language-Javascript:LineMessageSender.gs">var channel_access_token = &quot;Channel Access Token&quot;
+var group_ID = &quot;グループID(後で設定します)&quot;;
+
+function doPost(e) {
+  //ここで場合分けする(GlitchからもDiscordのメッセをPostするので)
+  var events = JSON.parse(e.postData.contents).events;
+  events.forEach(function(event) {
+    if(event.type == &quot;message&quot;) {
+      sendToDiscord(event); // D-bot
+    } else if(event.type == &quot;follow&quot;) {
+      follow(event);
+    } else if(event.type == &quot;unfollow&quot;) {
+      unFollow(event);
+    }else if(event.type == &quot;discord&quot;) {
+      sendToLine(event); // L-bot
+    }
+ });
+}
+
+// D-bot
+function sendToDiscord(e) {
+  // LINEからユーザ名を取得するためのリクエストヘッダー
+  var requestHeader = {
+    &quot;headers&quot; : {
+      &quot;Authorization&quot; : &quot;Bearer &quot; + channel_access_token
+    }
+  };
+  var userID = e.source.userId;
+  var groupid_tmp = e.source.groupId;
+  // LINEにユーザープロフィールリクエストを送信(返り値はJSON形式)
+  var response = UrlFetchApp.fetch(&quot;https://api.line.me/v2/bot/group/&quot;+groupid_tmp+&quot;/member/&quot;+userID, requestHeader);
+  
+  var message = e.message.text;
+  // レスポンスからユーザーのディスプレイネームを抽出
+  var name = JSON.parse(response.getContentText()).displayName;
+  sendDiscordMessage(name, message);
+  // LINEにステータスコード200を返す(これがないと動かない)
+  return response.getResponseCode();
+}
+
+// L-bot
+function sendToLine(e) {
+  // メッセージの内容(送信先と内容)
+  var message = {
+    &quot;to&quot; : group_ID,
+    &quot;messages&quot; : [
+      {
+        &quot;type&quot; : &quot;text&quot;,
+        &quot;text&quot; : e.name + &quot;「&quot;+e.message+&quot;」&quot;
+      }
+    ]
+  };
+  // LINEにpostするメッセージデータ
+  var replyData = {
+    &quot;method&quot; : &quot;post&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;,
+      &quot;Authorization&quot; : &quot;Bearer &quot; + channel_access_token
+    },
+    &quot;payload&quot; : JSON.stringify(message)
+  };
+  // LINEにデータを投げる
+  var response = UrlFetchApp.fetch(&quot;https://api.line.me/v2/bot/message/push&quot;, replyData);
+  // LINEにステータスコード200を返す
+  return response.getResponseCode();
+}
+
+/* フォローされた時の処理 */
+function follow(e) {
+  // 今のところ空白だけど自由に実装してみると楽しい。
+  // よくある「友だち追加ありがとうございます」はここで実装する。
+  // 不特定多数にフォローされるような運用はしないのでスルー。
+}
+
+/* アンフォローされた時の処理 */
+function unFollow(e){
+  // ここでは普通こちらからもフォローを切る処理を入れる。
+  // ここも不特定多数にフォローされるような運用はしないのでスルー。
+}
+</code></pre>
+
+<pre><code class="language-Javascript:DiscordWebhook.gs">function sendDiscordMessage(name, message) {
+  var webhookURL = &quot;Discord Webhook URL&quot;;
+  // Discord webhookに投げるメッセージの内容
+  var options = {
+    &quot;content&quot; : name+&quot; 「&quot;+message+&quot;」&quot;
+  };
+  // データを作って投げる
+  var response = UrlFetchApp.fetch(
+    webhookURL,
+    {
+      method: &quot;POST&quot;,
+      contentType: &quot;application/json&quot;,
+      payload: JSON.stringify(options),
+      muteHttpExceptions: true,
+    }
+  );
+  // こちらはステータスコードを返す必要はない
+}
+</code></pre>
+
+<p><code>LineMessageSender.gs</code>の1行目<code>channel_access_token</code>には先ほど控えておいたLINEのチャネルアクセストークンを、<code>DiscordWebhook.gs</code>の2行目<code>webhookURL</code>には先ほど控えたDiscordのwebhook URLを入れておきましょう。
+簡単に解説をすると、<code>LineMessageSender.gs</code>では<code>doPost()</code>関数でLINE/Glitch(後述)からのpostを監視します。メッセージが来たらその内容のpostが来るようになっているので、そこでLINEからのメッセージか、Discordからのメッセージか等を場合分けし、下の各種メソッドに流し込んでいます。
+ちなみに<code>message</code>,<code>follow</code>,<code>unfollow</code>がLINE Messaging APIで定義されたLINEのイベントで、<code>discord</code>がこれからGlitchで定義するDiscordのメッセージイベントです。</p>
+
+<h3 id="lineとgasを紐付けてd-botを起動する">LINEとGASを紐付けてD-botを起動する</h3>
+
+<p>まずは先ほどのGASプロジェクトページにある「公開」から「ウェブアプリケーションとして公開」を選択します。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/06b29779-94f9-3508-d252-51e333f272e4.png" alt="13.png" />
+すると公開設定の画面が開くので、「Project version」を「New」、「Execute the app as」を「Me(メールアドレス)」、「Who has access to the app」を「Anyone, even anonymous」に設定して下の青いボタンを押します。<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/0cfd9cbf-2983-83d3-d15d-2880b9047efb.png" alt="14.png" />
+ここで嵌まりやすいポイントですが、GASコードを少しでも変更したら再度この手順を踏まないと更新が反映されません。さらに、<strong>Project versionを毎度Newに設定しないと更新が適用されません。</strong>そこは注意してください。</p>
+
+<p>次に、先ほどのLINE DeveloperのMessaging API設定のページを開きます。<a href="https://developers.line.biz/console/">こちら</a>からアクセスできます。
+Webhook settingsの「Webhook URL」に先ほどのGASアプリケーションのURLを入力します。すると下部に「Use webhook」の項目が出現するので、そこをオンにしておきましょう。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/f3a21957-2e68-adfa-79b4-3697fd6242f2.png" alt="15.png" />
+これでD-botの実装は完了です！お疲れ様でした！</p>
+
+<h2 id="l-botの構築と実装">L-botの構築と実装</h2>
+
+<h3 id="l-botの実装-とその前に">L-botの実装、とその前に…</h3>
+
+<p>ここからはL-botを実装していきます。
+当初はL-botもGAS上で実装する予定でした。しかし、なんとDiscordにはLINEのような「メッセージが送られたときに外部にpostする」ような機能が存在しません。嘆かわしいことです。
+そこで、GASとWebhookでの実装は諦め、サーバーにbotを潜り込ませてメッセージをとってくるようにしようと思います。
+(そのため、この仕組みではDiscordサーバー上に2機のbotがいます。ただしWebhookのbotはメンバー欄には表示されません)
+ここで利用するのが<strong>Glitch</strong>です。恐らく[Discord bot サーバーなし][検索]とかやるとそこそこ出てくると思います。
+では、GlitchでDiscord botを作っていきましょう。まずは…</p>
+
+<h3 id="botのdiscordアカウントを用意する">botのDiscordアカウントを用意する</h3>
+
+<p>まずは<a href="https://discordapp.com/developers/applications/me/">Discord developer portal</a>にアクセスします。
+左上の「New Application」を押してBotを作ってみましょう！
+(画像は私のものです。ふざけたbotがいますがお気になさらず…)
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/90129920-046b-635a-719f-99838906bcf0.png" alt="image.png" />
+botの名前を入力してbotを作成しましょう。
+したら設定画面に飛ぶので、そこの左メニューから「Bot」を選んで、
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/d068d286-3cad-f7b2-771e-c360dde411d7.png" alt="image.png" />
+Add Bot!!
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/d1c44fcc-ba96-6129-4ebb-76d403203498.png" alt="image.png" />
+Botを作ったら取り消せないよ～みたいなことが書いてありますが(多分)、今はそれが目的なので、Yes, do it!
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/d363db63-1e5c-f9d6-db26-8e20b4f69e20.png" alt="image.png" />
+やせいの　ぼっと　が　あらわれた！！
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/6d603c37-1919-6087-ff0f-6f6a14d5cc98.png" alt="image.png" />
+このTOKENというのをコピーしてどこかに控えておいてください。後ほど使います。</p>
+
+<p>これでDiscord botが用意できました！
+次にGlitchでbotの中身を書いていきます。</p>
+
+<h3 id="glitchでl-bot-discord側-を構築する">GlitchでL-bot(Discord側)を構築する</h3>
+
+<p>まずはGlitchにユーザー登録します。<a href="https://glitch.com/">こちらのリンク</a>からGlitchのページに飛び、右上のSign inから好きな登録方法を選び、ユーザー登録を済ませてください。
+一から実装しても良いのですが、ここでは面倒なので既に作成済みのアプリケーションからコピーします。<a href="https://glitch.com/~pumped-chopper">このリンク</a>にアクセスして少し下に行ったところに「Remix Your Own」をクリックしてコピーしましょう。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/5eeb7aa7-eb9f-4693-d014-d2df53475a59.png" alt="image.png" />
+そうすると自動で新しいプロジェクトが作成されるので、早速コードを編集していきます。
+すでに開いている<code>README.md</code>を華麗にスルーし、左のメニューから<code>main.js</code>を開いて編集していきます。ここでは、botが参加しているサーバーで発言があった場合に、その内容とユーザーの名前をGASに送信するような構成に魔改造していきます。</p>
+
+<p>完成したものがこちらです。</p>
+
+<pre><code class="language-Javascript:main.js">// Response for Uptime Robot
+const http = require(&quot;http&quot;);
+http
+  .createServer(function(request, response) {
+    response.writeHead(200, { &quot;Content-Type&quot;: &quot;text/plain&quot; });
+    response.end(&quot;Discord bot is active now \n&quot;);
+  })
+  .listen(3000);
+
+// Discord bot implements
+const discord = require(&quot;discord.js&quot;);
+const client = new discord.Client();
+
+client.on(&quot;ready&quot;, message =&gt; {
+  // botのステータス表示
+  client.user.setPresence({ game: { name: &quot;with discord.js&quot; } });
+  console.log(&quot;bot is ready!&quot;);
+});
+
+client.on(&quot;message&quot;, message =&gt; {
+  // bot(自分)のメッセージには反応しない(これをしないと兵庫県警に捕まる)
+  if (message.author.bot) {
+    return;
+  }
+  // DMには応答しない
+  if (message.channel.type == &quot;dm&quot;) {
+    return;
+  }
+
+  var msg = message;
+
+  // botへのリプライは無視
+  if (msg.isMemberMentioned(client.user)) {
+    return;
+  } else {
+    //GASにメッセージを送信
+    sendGAS(msg);
+    return;
+  }
+
+  function sendGAS(msg) {
+    // LINE Messaging API風の形式に仕立てる(GASでの場合分けが楽になるように)
+    var jsonData = {
+      events: [
+        {
+          type: &quot;discord&quot;,
+          name: message.author.username,
+          message: message.content
+        }
+      ]
+    };
+    //GAS URLに送る
+    post(process.env.GAS_URL, jsonData);
+  }
+
+  function post(url, data) {
+    //requestモジュールを使う
+    var request = require(&quot;request&quot;);
+    var options = {
+      uri: url,
+      headers: { &quot;Content-type&quot;: &quot;application/json&quot; },
+      json: data,
+      followAllRedirects: true
+    };
+    // postする
+    request.post(options, function(error, response, body) {
+      if (error != null) {
+        msg.reply(&quot;更新に失敗しました&quot;);
+        return;
+      }
+
+      var userid = response.body.userid;
+      var channelid = response.body.channelid;
+      var message = response.body.message;
+      if (
+        userid != undefined &amp;&amp;
+        channelid != undefined &amp;&amp;
+        message != undefined
+      ) {
+        var channel = client.channels.get(channelid);
+        if (channel != null) {
+          channel.send(message);
+        }
+      }
+    });
+  }
+});
+
+if (process.env.DISCORD_BOT_TOKEN == undefined) {
+  console.log(&quot;please set ENV: DISCORD_BOT_TOKEN&quot;);
+  process.exit(0);
+}
+
+client.login(process.env.DISCORD_BOT_TOKEN);
+</code></pre>
+
+<p>完成しましたがこれだけでは動きません。というかこれで動いたらちょっと怖いですね。
+まだbotのtokenもGASのURLも指定していないので、これではGlitchはDiscordにもGASにもアクセス出来ません。
+<code>.env</code>ファイルを編集していきます。</p>
+
+<pre><code class="language-shell:.env"># Environment Config
+
+# store your secrets and config variables in here
+# only invited collaborators will be able to see your .env values
+
+# reference these in your code with process.env.SECRET
+
+SECRET=
+MADE_WITH=
+DISCORD_BOT_TOKEN=[bot token]
+GAS_URL=[GAS URL]
+
+# note: .env is a shell file so there can't be spaces around =
+ # Scrubbed by Glitch 2020-03-05T10:08:32+0000
+</code></pre>
+
+<p>上の<code>[bot token]</code>に先ほどコピーしたDiscord botのtokenを、<code>[GAS URL]</code>には前々項でLINE webhookに指定したGASのアプリケーションURLを指定しておきましょう。
+これでコード部分は完成です。お疲れ様でした！</p>
+
+<p>…しかしまだ動きません。<code>main.js</code>で使用している<code>request</code>モジュールをimportしましょう。
+(私はこれが分からなくて3時間融かしました)
+<code>package.json</code>を開きます。
+すると上部に<code>Add package</code>メニューがあるので、そこをクリックして「request」と入力して検索をかけ、<code>request</code>モジュールをimportします。クリックするだけでimportできます。簡単ですね。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/88e7912f-c1a9-45a7-46ce-1c043aeef009.png" alt="image.png" />
+ここまでできればもう一息です。ラストスパート！！</p>
+
+<h3 id="glitchを常時起動状態にする">Glitchを常時起動状態にする</h3>
+
+<p>これをしないとbotが5分でスリープしてしまいます。定期的にアクセスを投げるために<strong>Uptime Robot</strong>を使います。
+まずは<a href="https://uptimerobot.com/">Uptime Robotのトップページ</a>にアクセスして、右上のSign upからアカウントを作ります。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/8899ed29-83a1-3f7b-5322-5e6421e8649f.png" alt="image.png" />
+プラン選択画面が出てきますが、右側のFree Planで十分です。下部のSign upをクリックしましょう。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/5dc37157-d023-6cef-a589-1f205bdd2a66.png" alt="image.png" />
+あとは道なりに進めば登録は終了します。名前は偽名でOKです。
+Uptime Robotにログインするとダッシュボードが開くので、そこにGlitchのURLにアクセスし続けるタイマーを仕掛けましょう。左上の「+ Add New Monitor」をクリックして、Monitor TypeのHTTP(s)を選択します。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/ae9a0b1c-ae4f-e7d4-58b9-ce7d8f6cd345.png" alt="01.png" />
+するといくつか項目が出現します。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/210d29b4-a5fc-c5f5-3bb4-d568da8cf705.png" alt="image.png" />
+「Friendly Name」にはわかりやすい名前をつけると良いでしょう。自由です。「URL」ですが、<code>https://{Glitchプロジェクト名}.glitch.me/</code>という形式のURLを入力します。
+ここでいうGlitchプロジェクト名とは、自動で生成されたプロジェクト名のことです。
+自分でコピーしたプロジェクトを見ると、<code>[英単語]-[英単語]</code>(もしくは<code>[英単語]-[英単語]-[英単語]</code>)という形式の名前がついていると思います。それがプロジェクト名です。
+最後に、「Select &ldquo;Alert Contacts To Notify&rdquo;」のチェックを登録したメールアドレスにつけておきましょう。何か異常があれば、このメールアドレスに連絡が届きます(このメールアドレスは変更可能ですが少なくとも1つは必要です)。
+他の部分は特に変更せずに、そのまま画面下の「Create Monitor」をクリックしましょう。これでUptime Robotの設定は終了です。お疲れ様でした！！</p>
+
+<h3 id="l-botを起動する">L-botを起動する</h3>
+
+<p>あと1ステップです。頑張りましょう。
+ここまできてもまだL-botは起動出来ません。LINEのgroup IDを設定していませんでしたね。
+ここを設定していきましょう。
+(かなりスマートじゃない手段を使って設定します。他に方法があればコメントなりTwitterなりで教えてください)
+先ほどのGASコードを編集します。具体的には、<code>LineMessageSender.gs</code>の30行目を、</p>
+
+<pre><code class="language-Javascript:LineMessageSender.gs">var message = e.message.text;
+</code></pre>
+
+<p>を</p>
+
+<pre><code class="language-Javascript:LineMessageSender.gs">var message = e.message.text + groupid_tmp;
+</code></pre>
+
+<p>と一時的に変更してデバッグ出力みたいなことをします。
+この状態にすればD-botはもう稼働しているので、LINE botに何か発言をすればLINEのgroup IDが含まれたメッセージがDiscordのWebhookチャンネルに送られてくるはずです。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/ceebab67-092c-06f8-7597-aabde9bf5d88.png" alt="02.png" />
+(画像では転送が成功した瞬間なので私が狂喜しています)
+こうしてLINEのgroup IDが取得出来たら、それをGASの<code>LineMessageSender.gs</code>2行目の<code>group_ID</code>に設定しておきましょう。それとデバッグ出力を切るのも忘れずに。
+これでプログラムは完成です！！</p>
+
+<h3 id="l-bot-discord側-をdiscordサーバーに配置する">L-bot(Discord側)をDiscordサーバーに配置する</h3>
+
+<p>最後のステップです。
+<a href="https://discordapp.com/developers/applications">Discord developer portal</a>に戻り、今度はSettingsの「OAuth2」を選択します。
+すると設定画面に移行するので、その下の「SCOPES」で「bot」を選択します。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/45dd5993-b9cb-dc69-121c-9b7e91480bb4.png" alt="03.png" />
+次に権限を設定します。
+画面下部に現れた「BOT PERMISSIONS」から「Administrator」を選択しておきましょう。
+チェックを入れ終わったら表示されているURLをコピーし、そのURLにアクセスします。
+するとサーバー選択画面になるので、追加したいサーバーを選択して「はい」を選択します。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/e9646cdf-ddf9-068a-b955-c8a4629cb53a.png" alt="04.png" />
+これでL-botの起動が完了しました！</p>
+
+<h2 id="完成">完成</h2>
+
+<p>やった！！！完成！！！！！！！！！
+こんな感じで動作します。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/bcbe3be8-ed33-ddb6-b4a1-d8972eb3a526.jpeg" alt="ESZZercXYAcx7bW.jpg" />
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554644/2f8d396b-1408-d7cf-1d12-82eef4edbd81.jpeg" alt="ESZ4FHVUEAk2LHs.jpg" /></p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>お疲れ様でした。
+結構細かいトラップがたくさん敷き詰めてあったイメージでした。暇があればトラップ集みたいなものも作って記事にしてみたいと思います。</p>
+
+<p>それと、勘の良い方ならお気づきかもしれませんが、このままでは画像の送信はできません。画像の送信については「読者への演習問題とする」としておきます。ちょっとめんどくさいですができます。</p>
+
+<p>また、このままではDiscordのメッセージは送信されたチャンネルに関係なく全てLINEへ転送されてしまいます。そういった動作仕様ですが、この動作が嫌いな方はぜひ自分で実装してみてください。ここまでの文章を理解できたあなたなら苦も無く実装できることでしょう。</p>
+
+<h2 id="ちなみに">ちなみに</h2>
+
+<p>Slackだとwebhookからメッセージを取得出来るのでもうちょい楽らしいです。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<p>大変お世話になりましたm(_ _)m</p>
+
+<p><a href="https://qiita.com/nkjm/items/38808bbc97d6927837cd">LINEのBot開発 超入門（前編） ゼロから応答ができるまで</a></p>
+
+<p><a href="https://qiita.com/_y_s_k_w/items/95b29a8a72bb97768256">Google Apps ScriptでPostする</a></p>
+
+<p><a href="https://qiita.com/Eai/items/1165d08dce9f183eac74">DiscordにWebhookでいろいろ投稿する</a></p>
+
+<p><a href="http://sindouaika.blogspot.com/2018/02/gasdiscord-bot.html">GASでDiscord botを作ろうと奮闘した話</a></p>
+
+<p><a href="https://note.com/bami55/n/ncc3a68652697">簡単なDiscord Botの作り方（初心者向け）</a></p>
+
+<p><a href="https://qiita.com/yuzuki_/items/23935e4a49035d313e5e">自動応答のDiscord Botを完全無料で構築する[gas][glitch]</a></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">App Apeのデータに拠る。2020/03/06閲覧。
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+        
+        <a href="https://twitter.com/intent/tweet?button_hashtag=六甲学院物理部2020&ref_src=twsrc%5Etfw"
+          class="twitter-hashtag-button" data-show-count="false">Tweet #六甲学院物理部2020</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+      </div>
+  </div>
+  <script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/bootstrap.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.cookie.js"> </script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/ekko-lightbox.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/jquery.scrollTo.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/masonry.pkgd.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/owl.carousel.min.js"></script>
+<script src="https://rokkophysicsclub.github.io/rpc-2020/js/front.js"></script>
+
+
+
+</body>
+</html>
