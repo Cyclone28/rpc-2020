@@ -16,7 +16,7 @@ publishDir = "docs"
   description = "六甲学院物理部の2020年度オンライン文化祭非公式サイト"
   copyright = "&copy;2020 六甲学院物理部"
   sidebarAbout = [
-    "六甲学院物理部の2020年度オンライン文化祭非公式サイトです。",
+    "六甲学院物理部の2020年度オンライン文化祭サイトです。（学校非公式）",
     "コロナに負けない！"
   ]
   # Contact page
@@ -51,6 +51,14 @@ publishDir = "docs"
   [[params.navlinks]]
   name = "Works"
   url = "works/"
+
+  [[params.navlinks]]
+  name = "Afterword"
+  url = "afterword/"
+
+  [[params.navlinks]]
+  name = "About"
+  url = "about/"
 
   [params.social]
   #facebook      = "full page or profile url in facebook"
